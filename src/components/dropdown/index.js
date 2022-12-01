@@ -6,7 +6,6 @@ import {
   Item,
   Body,
   Icon,
-  IconImage,
 } from "./styles/dropdown";
 
 export default function Dropdown({ children, ...restProps }) {
@@ -37,8 +36,10 @@ Dropdown.Container = function DropdownContainer({
   return (
     <Container {...restProps}>
       <Header onClick={() => setActive((active) => !active)}>
+        {/* If the selection exists, we replace the placeholder with the user's pick. */}
         {selection === "" ? placeholder : selection}
         <Icon>
+          {/* We conditionally render the dropdown icon based on if the dropdown is open or not. */}
           {active ? (
             <img src="/images/chevronUp.png" alt="Close Dropdown Menu" />
           ) : (
@@ -49,7 +50,8 @@ Dropdown.Container = function DropdownContainer({
       {active && (
         <Body>
           {data?.map((item, index) =>
-            //
+            // Here we check to see if the item is an object with an abbreviation key.
+            // If so, we know that we need the state select function, if not, we're selecting occupation.
             item.abbreviation ? (
               <Item key={index} onClick={() => stateSelect(item)}>
                 {/* We have to make this reusable between states and occupations. Item.abbreviation works for states, but  */}
