@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You can run this app on your own machine by [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), running the `npm i` command to install all node packages while in the project's directory via the terminal, then by running the `npm start` script in that same terminal. This command will run the app in development mode, and open [http://localhost:3000](http://localhost:3000) so you can view it in your browser.
 
+This app was built using [Styled Components](https://styled-components.com/), which lets us keep our components neater by grouping necessary elements together, while also styling them with CSS. There's documentation in the index.js file of each subfolder explaining the export structure.
+
 You can also see a working example of this form deployed on Vercel here: https://fr-tht.vercel.app/
 
 ## Possible Package Error:
