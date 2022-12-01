@@ -37,7 +37,7 @@ export const submitData = async (
   setOccupation,
   setHomeState
 ) => {
-  // We start by establishing a variable to perform the email check when the user clicks submit.
+  // We start by establishing a variable to perform the check the user's email when they click submit.
   let validEmail = validateEmail(email);
 
   // We then check every possible field before validating the email so that we can warn the user
