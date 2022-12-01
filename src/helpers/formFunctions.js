@@ -41,6 +41,8 @@ export const submitData = async (
   // We start by establishing a variable to perform the email check when the user clicks submit.
   let validEmail = validateEmail(email);
 
+  // We then check every possible field before validating the email so that we can warn the user
+  // if the form is incomplete.
   if (name === "") {
     noNameAlert();
     return;
@@ -71,6 +73,7 @@ export const submitData = async (
     // Salting/Hashing password before sending it to endpoint
     const hashedPW = passwordHash(password);
 
+    // Creating JSON object to submit to endpoint
     const data = {
       name,
       email,
@@ -79,7 +82,9 @@ export const submitData = async (
       state,
     };
     const endpoint = "https://frontend-take-home.fetchrewards.com/form";
+
     try {
+      // Here, we make sure the email is valid before the actual JSON submission process.
       if (validEmail === false) {
         validEmailAlert();
       } else {
@@ -88,7 +93,7 @@ export const submitData = async (
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),
         });
-        console.log(response.status);
+        // We clear all inputs upon successful submission.
         setName("");
         setEmail("");
         setPassword("");
