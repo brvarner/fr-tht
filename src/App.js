@@ -1,11 +1,13 @@
 import "./App.css";
-import HomeContainer from "./containers/home";
+import { Home, Hero, Footer } from "./containers";
 import "@fontsource/lato";
 
 function App() {
   return (
     <div className="App" style={{ backgroundColor: "#4f7a9a" }}>
-      <HomeContainer />
+      <Hero />
+      <Home />
+      <Footer />
     </div>
   );
 }

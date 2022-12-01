@@ -3,6 +3,7 @@ import { Form, Dropdown, Spacer } from "../../components";
 import { Footer, Hero } from "..";
 import { grabData, submitData } from "../../helpers";
 
+// This container holds everything between the header and the footer.
 export default function HomeContainer({ props }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,8 +32,6 @@ export default function HomeContainer({ props }) {
 
   return (
     <div>
-      <Hero />
-
       <Spacer background={"./images/heroSpacer.svg"} />
 
       <Form>
@@ -109,8 +108,6 @@ export default function HomeContainer({ props }) {
       </Form>
 
       <Spacer background={"./images/footerSpacer.svg"} />
-
-      <Footer />
     </div>
   );
 }
