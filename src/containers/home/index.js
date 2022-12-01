@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Form, Dropdown, Spacer } from "../../components";
-import { Footer, Hero } from "..";
 import { grabData, submitData } from "../../helpers";
 
 // This container holds everything between the header and the footer.

@@ -51,9 +51,4 @@ export const Icon = styled.button`
     filter: brightness(0) invert(1);
     width: 10px;
   }
-  color: black;
-`;
-
-export const IconImage = styled.image`
-  transform: rotate(90deg);
 `;

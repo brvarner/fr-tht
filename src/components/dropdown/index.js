@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   DropdownBase,
   Container,
@@ -38,12 +38,12 @@ Dropdown.Container = function DropdownContainer({
     <Container {...restProps}>
       <Header onClick={() => setActive((active) => !active)}>
         {selection === "" ? placeholder : selection}
-        <Icon active={active}>
-          <IconImage
-            src="/images/chevron.png"
-            color="black"
-            alt="Dropdown Button"
-          />
+        <Icon>
+          {active ? (
+            <img src="/images/chevronUp.png" alt="Close Dropdown Menu" />
+          ) : (
+            <img src="/images/chevronDown.png" alt="Open Dropdown Menu" />
+          )}
         </Icon>
       </Header>
       {active && (
