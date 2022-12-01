@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Fetch Rewards Take Home Test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Information
 
-In the project directory, you can run:
+You can run this app on your own machine by [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), running the `npm i` command to install all node packages while in the project's directory via the terminal, then by running the `npm start` script in that same terminal. This command will run the app in development mode, and open [http://localhost:3000](http://localhost:3000) so you can view it in your browser.
 
-### `npm start`
+You can also see a working example of this form deployed on Vercel here: https://fr-tht.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Possible Package Error:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You may encounter an error related to the bcryptjs npm package used in this app to hash passwords. 
 
-### `npm test`
+This error will read: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<pre>
+        <code>
+                WARNING in ./node_modules/bcryptjs/dist/bcrypt.js 64:13-45
+                Module not found: Error: Can't resolve 'crypto' in 'E:\Code Stuff\fr-tht\node_modules\bcryptjs\dist'
 
-### `npm run build`
+                BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.     
+                This is no longer the case. Verify if you need this module and configure a polyfill for it.     
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+                If you want to include a polyfill, you need to:
+                        - add a fallback 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }' 
+                        - install 'crypto-browserify'
+                If you don't want to include a polyfill, you can use an empty module like this:
+                resolve.fallback: { "crypto": false }
+        </code>
+</pre>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To solve this error, after you've installed the node_modules on your local machine, go to node_modules/bcryptjs and find the package.json file. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then, change the "browser" entry on line 30 of the package.json file from `"browser": "dist/bcrypt.js"` to `"browser": {"crypto": false}`
