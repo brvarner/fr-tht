@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Information
 
-You can run this app on your own machine by [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), running the npm i command to install all node packages while in the project's directory via the terminal, then by running the `npm start` script in that same terminal. This command will run the app in development mode, and open [http://localhost:3000](http://localhost:3000) so you can view it in your browser.
+You can run this app on your own machine by [cloning it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), running the `npm i` command to install all node packages while in the project's directory via the terminal, then by running the `npm start` script in that same terminal. This command will run the app in development mode, and open [http://localhost:3000](http://localhost:3000) so you can view it in your browser.
 
 You can also see a working example of this form deployed on Vercel here: https://fr-tht.vercel.app/
 
